@@ -1,3 +1,5 @@
 # CECS-448-Project-2-Team-3
 
-Please run `npm install` before running `npm start`
+To run, use `npm run dev`
+
+Please run `npm install` before running `npm run dev`
