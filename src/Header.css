@@ -1,0 +1,24 @@
+.fullHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fullHeaderItem, .leftSideHeaderItem, .rightSideHeaderContainer{
+    display: inline-block;
+}
+
+.leftSideHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+.rightSideHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
