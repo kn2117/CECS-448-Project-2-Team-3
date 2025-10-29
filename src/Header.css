@@ -4,13 +4,15 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .fullHeaderItem, .leftSideHeaderItem, .rightSideHeaderContainer{
     display: inline-block;
 }
 
-.leftSideHeaderContainer {
+.leftSideHeaderContainer{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,4 +23,16 @@
     flex-direction: row;
     align-items: center;
     justify-content: right;
+}
+
+.headerStackContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.logo {
+    height: 80px;
 }
