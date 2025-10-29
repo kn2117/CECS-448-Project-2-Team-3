@@ -1,4 +1,4 @@
-import { Button, Toolbar } from '@mui/material';
+import { Button, Menu, Toolbar } from '@mui/material';
 import './Header.css'
 import TextField from '@mui/material/TextField';
 import logo from './assets/logo.png';
@@ -11,49 +11,53 @@ export default function Header() {
                 <div class="leftSideHeaderContainer fullHeaderItem">
                     <img class="logo leftSideHeaderItem" src={logo} />
                     <div class="headerStackContainer leftSideHeaderItem">
-                        <TextField class="titleTextBox" id="outlined-basic" label="" variant="outlined" size="small" defaultValue="My Document" />
-                        <div class="menuBarContainer leftSideHeaderItem">
+                        <TextField class="titleTextBox headerStackItem" id="outlined-basic" label="" variant="outlined" size="small" defaultValue="My Document" />
+                        <div class="menuBarContainer headerStackItem">
                             <Toolbar variant="dense" disableGutters={true}>
-                                <Button id="basic-button" color="black">
-                                    File
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Edit
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    View
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Insert
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Format
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Tools
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Extensions
-                                </Button>
-                                <Button id="basic-button" color="black">
-                                    Help
-                                </Button>
+                                <MenuItemButton name="File" />
+                                <MenuItemButton name="Edit" />
+                                <MenuItemButton name="View" />
+                                <MenuItemButton name="Insert" />
+                                <MenuItemButton name="Format" />
+                                <MenuItemButton name="Tools" />
+                                <MenuItemButton name="Extensions" />
+                                <MenuItemButton name="Help" />
                             </Toolbar>
                         </div>
                     </div>
                 </div>
                 <div class="rightSideHeaderContainer fullHeaderItem">
                     <div class="rightSideHeaderItem">
+                        <Button>
+                            History
+                        </Button>
+                        <Button>
+                            Comments
+                        </Button>
+                    </div>
+                    <div class="rightSideHeaderItem">
                         <Button variant='contained'>
                             Share
                         </Button>
                     </div>
                     <div class="rightSideHeaderItem">
-                        <AccountCircleIcon fontSize='large'/>
+                        <Button>
+                            <AccountCircleIcon fontSize='large'/>
+                        </Button>
                     </div>
                 </div>
                 
             </div>
+        </>
+    )
+}
+
+function MenuItemButton({name}) {
+    return (
+        <>
+            <Button id="basic-button" color="black">
+                {name}
+            </Button>
         </>
     )
 }
