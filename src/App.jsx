@@ -11,8 +11,10 @@ function App() {
     <>
       <div class="header">
         <Header />
-       </div>
-       <DocBody/>
+      </div>
+      <div class="docBody">
+        <DocBody/>
+      </div>
       
        {/* <div class="documentTabs">
          <DocumentTabs />

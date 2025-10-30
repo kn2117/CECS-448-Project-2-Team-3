@@ -7,3 +7,12 @@
 .header, .documentTabs, .editingModes, .ribbonMenu, .mainDocWindow {
   width: 100%;
 }
+
+.header {
+  position: fixed;
+  background-color: white;
+}
+
+.docBody {
+  margin-top: 70px;
+}
