@@ -3,8 +3,9 @@ import './Header.css';
 import logo from './assets/logo.png';
 import { Button, IconButton, Menu, MenuItem, Toolbar, TextField } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import HistoryIcon from '@mui/icons-material/History';
-import CommentIcon from '@mui/icons-material/Comment';
+import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import PublicIcon from '@mui/icons-material/Public';
 
 export default function Header() {
@@ -36,13 +37,35 @@ export default function Header() {
                 </div>
                 <div class="rightSideHeaderItem">
                     <IconButton>
-                        <CommentIcon />
+                        <CommentOutlinedIcon />
                     </IconButton>
                 </div>
-                <div class="rightSideHeaderItem">
-                    <Button variant='contained' startIcon={<PublicIcon />}>
+                <div class="rightSideHeaderItem shareButtonContainer">
+                    <Button
+                        variant="contained"
+                        startIcon={<PublicIcon />}
+                        sx={{
+                            borderRadius: '20px 0 0 20px',
+                            textTransform: 'none',
+                            backgroundColor: 'rgb(201, 230, 253)',
+                            color: 'rgb(7, 28, 51)'
+                        }}
+                    >
                         Share
                     </Button>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: '0 20px 20px 0',               // remove inner corners
+                            textTransform: 'none',
+                            backgroundColor: 'rgb(201, 230, 253)',
+                            color: 'rgb(7, 28, 51)',
+                            minWidth: '40px',              // narrow slice for arrow
+                            paddingX: 0
+                        }}
+                    >
+    <ArrowDropDownIcon />
+  </Button>
                 </div>
                 <div class="rightSideHeaderItem">
                     <IconButton>
@@ -70,7 +93,7 @@ function MenuItemButton({name}) {
     );
 }
 
-function BasicMenu() {
+function BasicMenu({name}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -81,15 +104,23 @@ function BasicMenu() {
   };
 
   return (
-    <div>
+    <>
       <Button
         id="basic-button"
+        color="black"
+        size="small"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{
+            paddingY: 0,        // vertical padding
+            paddingX: 1,        // horizontal padding (theme spacing unit, 1 = 8px)
+            minWidth: 'auto',
+            textTransform: 'none',
+        }}
       >
-        Dashboard
+        {name}
       </Button>
       <Menu
         id="basic-menu"
@@ -106,7 +137,7 @@ function BasicMenu() {
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
-    </div>
+    </>
   );
 }
 
