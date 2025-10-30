@@ -13,7 +13,7 @@ export default function Header() {
             <div class="leftSideHeaderContainer fullHeaderItem">
                 <img class="logo leftSideHeaderItem" src={logo} />
                 <div class="headerStackContainer leftSideHeaderItem">
-                    <TextField class="titleTextBox headerStackItem" id="outlined-basic" label="" variant="outlined" size="small" defaultValue="My Document" />
+                    <DocTitle />
                     <div class="menuBarContainer headerStackItem">
                         <Toolbar variant="dense" disableGutters={true}>
                             <MenuItemButton name="File" />
@@ -57,7 +57,14 @@ export default function Header() {
 
 function MenuItemButton({name}) {
     return (
-        <Button color="black" size="small">
+        <Button color="black" size="small"
+            sx={{
+                paddingY: 0,        // vertical padding
+                paddingX: 1,        // horizontal padding (theme spacing unit, 1 = 8px)
+                minWidth: 'auto',
+                textTransform: 'none',
+            }}
+        >
             {name}
         </Button>
     );
@@ -101,4 +108,30 @@ function BasicMenu() {
       </Menu>
     </div>
   );
+}
+
+function DocTitle() {
+    const [value, setValue] = React.useState("My Document");
+    return (
+        <TextField
+            value={value}
+            onChange={e => setValue(e.target.value)}
+            sx={{
+                width: `${value.length + 1}ch`,
+                '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                        borderColor: 'transparent',   // hide normally
+                    },
+                    '&:hover fieldset': {
+                        borderColor: '#1976d2',       // show on hover (use your theme color)
+                    },
+                    '&.Mui-focused fieldset': {
+                        borderColor: '#1976d2',       // show when focused
+                    },
+                },
+                '& .MuiInputBase-root': { height: '30px', padding: 0 },
+                '& .MuiOutlinedInput-input': { padding: '4px 8px' },
+            }}
+        />
+    );
 }
