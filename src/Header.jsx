@@ -64,8 +64,8 @@ export default function Header() {
                             paddingX: 0
                         }}
                     >
-    <ArrowDropDownIcon />
-  </Button>
+                        <ArrowDropDownIcon />
+                    </Button>
                 </div>
                 <div class="rightSideHeaderItem">
                     <IconButton>
@@ -94,51 +94,51 @@ function MenuItemButton({name}) {
 }
 
 function BasicMenu({name}) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
-  return (
-    <>
-      <Button
-        id="basic-button"
-        color="black"
-        size="small"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{
-            paddingY: 0,        // vertical padding
-            paddingX: 1,        // horizontal padding (theme spacing unit, 1 = 8px)
-            minWidth: 'auto',
-            textTransform: 'none',
-        }}
-      >
-        {name}
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        slotProps={{
-          list: {
-            'aria-labelledby': 'basic-button',
-          },
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </>
-  );
+    return (
+        <>
+            <Button
+                id="basic-button"
+                color="black"
+                size="small"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                sx={{
+                    paddingY: 0,        // vertical padding
+                    paddingX: 1,        // horizontal padding (theme spacing unit, 1 = 8px)
+                    minWidth: 'auto',
+                    textTransform: 'none',
+                }}
+            >
+                {name}
+            </Button>
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                slotProps={{
+                    list: {
+                        'aria-labelledby': 'basic-button',
+                    },
+                }}
+            >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+        </>
+    );
 }
 
 function DocTitle() {
