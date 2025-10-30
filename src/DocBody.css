@@ -1,0 +1,13 @@
+.DocContainer {
+    display: flex;
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+    height: 1000px; /* Provides the container with a height to center within */
+    background-color: #f9fbfd;
+}
+
+.DocBody{
+    width:60%;
+    height:90%;
+    border: 2px solid #c8c8c8;
+}
