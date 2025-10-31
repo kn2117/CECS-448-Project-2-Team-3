@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Header.css';
 import logo from './assets/logo.png';
-import { Button, IconButton, Menu, MenuItem, Toolbar, TextField } from '@mui/material';
+import { Button, Divider, IconButton, Menu, MenuItem, Toolbar, TextField } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import HistoryIcon from '@mui/icons-material/History';
@@ -17,8 +17,8 @@ export default function Header() {
                     <DocTitle />
                     <div class="menuBarContainer headerStackItem">
                         <Toolbar variant="dense" disableGutters={true}>
-                            <MenuItemButton name="File" />
-                            <MenuItemButton name="Edit" />
+                            <MenuButton name="File" />
+                            <MenuButton name="Edit" />
                             <MenuItemButton name="View" />
                             <MenuItemButton name="Insert" />
                             <MenuItemButton name="Format" />
@@ -93,7 +93,7 @@ function MenuItemButton({name}) {
     );
 }
 
-function BasicMenu({name}) {
+function MenuButton({name}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -133,12 +133,89 @@ function BasicMenu({name}) {
                     },
                 }}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItems name={name} handleClose={handleClose} />
             </Menu>
         </>
     );
+}
+
+function MenuItems({name, handleClose}) {
+    let fileItems = [
+        { name: "New", icon: "" },
+        { name: "Open", icon: "" },
+        { name: "Make a Copy", icon: "" },
+        "divider",
+        { name: "Share", icon: "" },
+        { name: "Email", icon: "" },
+        { name: "Download", icon: "" },
+        "divider",
+        { name: "Rename", icon: "" },
+        { name: "Move", icon: "" },
+        { name: "Add Shortcut to Drive", icon: "" },
+        { name: "Move to Trash", icon: "" },
+        "divider",
+        { name: "Version History", icon: "" },
+        "divider",
+        { name: "Details", icon: "" },
+        { name: "Security Limitations", icon: "" },
+        { name: "Language", icon: "" },
+        "divider",
+        { name: "Page Setup", icon: "" },
+        { name: "Print Preview", icon: "" },
+        { name: "Print", icon: "" }
+    ];
+
+    let editItems = [
+        { name: "Undo", icon: "" },
+        { name: "Redo", icon: "" },
+        "divider",
+        { name: "Cut", icon: "" },
+        { name: "Copy", icon: "" },
+        { name: "Paste", icon: "" },
+        { name: "Paste Without Formatting", icon: "" },
+        "divider",
+        { name: "Select All", icon: "" },
+        { name: "Delete", icon: "" },
+        { name: "Find and Replace", icon: "" }
+    ];
+    let menuItems = []
+
+    if (name === "File") 
+    {
+        menuItems = fileItems.slice();
+    }
+
+    else
+    {
+        menuItems = editItems.slice();
+    }
+
+    let menuItemsDecorated = []
+
+    for (let i = 0; i < menuItems.length; i++) {
+        let item = menuItems[i];
+        if (item === "divider")
+        {
+            menuItemsDecorated.push(
+                <Divider />
+            )
+        }
+        else 
+        {
+            menuItemsDecorated.push(
+                <MenuItem key={item.name} onClick={handleClose}>
+                    {item.icon ? item.icon : null}
+                    <span style={{ marginLeft: item.icon ? 8 : 0 }}>{item.name}</span>
+                </MenuItem>
+            )
+        }
+    }
+
+    return (
+        <>
+            {menuItemsDecorated}
+        </>
+    )
 }
 
 function DocTitle() {
