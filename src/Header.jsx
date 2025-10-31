@@ -3,10 +3,32 @@ import './Header.css';
 import logo from './assets/logo.png';
 import { Button, Divider, IconButton, Menu, MenuItem, Toolbar, TextField } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import HistoryIcon from '@mui/icons-material/History';
+import ArticleIcon from '@mui/icons-material/Article';
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined';
+import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
+import FullscreenOutlinedIcon from '@mui/icons-material/FullscreenOutlined';
+import HistoryIcon from '@mui/icons-material/History';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
+import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import PersonAddAlt1OutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined';
+import PlagiarismOutlinedIcon from '@mui/icons-material/PlagiarismOutlined';
+import PolicyOutlinedIcon from '@mui/icons-material/PolicyOutlined';
+import PrintOutlinedIcon from '@mui/icons-material/PrintOutlined';
 import PublicIcon from '@mui/icons-material/Public';
+import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 export default function Header() {
     return (
@@ -141,41 +163,44 @@ function MenuButton({name}) {
 
 function MenuItems({name, handleClose}) {
     let fileItems = [
-        { name: "New", icon: "" },
-        { name: "Open", icon: "" },
-        { name: "Make a Copy", icon: "" },
+        { name: "New", icon: <ArticleIcon /> },
+        { name: "Open", icon: <FolderOutlinedIcon /> },
+        { name: "Make a Copy", icon: <FileCopyOutlinedIcon /> },
         "divider",
-        { name: "Share", icon: "" },
-        { name: "Email", icon: "" },
-        { name: "Download", icon: "" },
+        { name: "Share", icon: <PersonAddAlt1OutlinedIcon /> },
+        { name: "Email", icon: <EmailOutlinedIcon /> },
+        { name: "Download", icon: <FileDownloadOutlinedIcon /> },
         "divider",
-        { name: "Rename", icon: "" },
-        { name: "Move", icon: "" },
-        { name: "Add Shortcut to Drive", icon: "" },
-        { name: "Move to Trash", icon: "" },
+        { name: "Rename", icon: <DriveFileRenameOutlineOutlinedIcon /> },
+        { name: "Move", icon: <DriveFileMoveOutlinedIcon /> },
+        { name: "Add Shortcut to Drive", icon: <AddToDriveIcon /> },
+        { name: "Move to Trash", icon: <DeleteOutlinedIcon /> },
         "divider",
-        { name: "Version History", icon: "" },
+        { name: "Version History", icon: <HistoryIcon /> },
         "divider",
-        { name: "Details", icon: "" },
-        { name: "Security Limitations", icon: "" },
-        { name: "Language", icon: "" },
+        { name: "Details", icon: <InfoOutlinedIcon /> },
+        { name: "Security Limitations", icon: <PolicyOutlinedIcon /> },
+        { name: "Language", icon: <LanguageOutlinedIcon /> },
         "divider",
-        { name: "Page Setup", icon: "" },
-        { name: "Print Preview", icon: "" },
-        { name: "Print", icon: "" }
+        { name: "Page Setup", icon: <DescriptionOutlinedIcon /> },
+        { name: "Print Preview", icon: <PlagiarismOutlinedIcon /> },
+        { name: "Print", icon: <PrintOutlinedIcon /> }
     ];
 
     let viewItems = [
-        { name: "Mode", icon: "" },
-        { name: "Comments", icon: "" },
-        { name: "Collapse tabs & outlines sidebar", icon: "" },
+        { name: "Editing Mode", icon: <ModeEditOutlinedIcon /> },
+        { name: "Suggesting Mode", icon: <RateReviewOutlinedIcon /> },
+        { name: "Viewing Mode", icon: <VisibilityOutlinedIcon /> },
         "divider",
-        { name: "Show print layout", icon: "" },
+        { name: "Comments", icon: <CommentOutlinedIcon /> },
+        { name: "Collapse tabs & outlines sidebar", icon: <ListOutlinedIcon /> },
+        "divider",
+        { name: "Show print layout", icon: <CheckOutlinedIcon /> },
         { name: "Show ruler", icon: "" },
         { name: "Show equation toolbar", icon: "" },
         { name: "Show non-printing characters", icon: "" },
         "divider",
-        { name: "Full screen", icon: "" }
+        { name: "Full screen", icon: <FullscreenOutlinedIcon /> }
     ];
     let menuItems = []
 
@@ -204,7 +229,7 @@ function MenuItems({name, handleClose}) {
             menuItemsDecorated.push(
                 <MenuItem key={item.name} onClick={handleClose}>
                     {item.icon ? item.icon : null}
-                    <span style={{ marginLeft: item.icon ? 8 : 0 }}>{item.name}</span>
+                    <span style={{ marginLeft: item.icon ? 8 : 32 }}>{item.name}</span>
                 </MenuItem>
             )
         }
