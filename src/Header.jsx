@@ -18,8 +18,8 @@ export default function Header() {
                     <div class="menuBarContainer headerStackItem">
                         <Toolbar variant="dense" disableGutters={true}>
                             <MenuButton name="File" />
-                            <MenuButton name="Edit" />
-                            <MenuItemButton name="View" />
+                            <MenuItemButton name="Edit" />
+                            <MenuButton name="View" />
                             <MenuItemButton name="Insert" />
                             <MenuItemButton name="Format" />
                             <MenuItemButton name="Tools" />
@@ -165,18 +165,17 @@ function MenuItems({name, handleClose}) {
         { name: "Print", icon: "" }
     ];
 
-    let editItems = [
-        { name: "Undo", icon: "" },
-        { name: "Redo", icon: "" },
+    let viewItems = [
+        { name: "Mode", icon: "" },
+        { name: "Comments", icon: "" },
+        { name: "Collapse tabs & outlines sidebar", icon: "" },
         "divider",
-        { name: "Cut", icon: "" },
-        { name: "Copy", icon: "" },
-        { name: "Paste", icon: "" },
-        { name: "Paste Without Formatting", icon: "" },
+        { name: "Show print layout", icon: "" },
+        { name: "Show ruler", icon: "" },
+        { name: "Show equation toolbar", icon: "" },
+        { name: "Show non-printing characters", icon: "" },
         "divider",
-        { name: "Select All", icon: "" },
-        { name: "Delete", icon: "" },
-        { name: "Find and Replace", icon: "" }
+        { name: "Full screen", icon: "" }
     ];
     let menuItems = []
 
@@ -187,7 +186,7 @@ function MenuItems({name, handleClose}) {
 
     else
     {
-        menuItems = editItems.slice();
+        menuItems = viewItems.slice();
     }
 
     let menuItemsDecorated = []
