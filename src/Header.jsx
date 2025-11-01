@@ -7,6 +7,7 @@ import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArticleIcon from '@mui/icons-material/Article';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+import CloudDoneOutlinedIcon from '@mui/icons-material/CloudDoneOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
@@ -28,6 +29,7 @@ import PolicyOutlinedIcon from '@mui/icons-material/PolicyOutlined';
 import PrintOutlinedIcon from '@mui/icons-material/PrintOutlined';
 import PublicIcon from '@mui/icons-material/Public';
 import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 export default function Header() {
@@ -36,7 +38,18 @@ export default function Header() {
             <div class="leftSideHeaderContainer fullHeaderItem">
                 <img class="logo leftSideHeaderItem" src={logo} />
                 <div class="headerStackContainer leftSideHeaderItem">
-                    <DocTitle />
+                    <div class="titleBarContainer headerStackItem">
+                        <DocTitle />
+                        <div class="titleBarItem">
+                            <StarBorderOutlinedIcon fontSize="small"/>
+                        </div>
+                        <div class="titleBarItem">
+                            <AddToDriveIcon fontSize="small" />
+                        </div>
+                        <div class="titleBarItem">
+                            <CloudDoneOutlinedIcon fontSize="small" />
+                        </div>
+                    </div>
                     <div class="menuBarContainer headerStackItem">
                         <Toolbar variant="dense" disableGutters={true}>
                             <MenuButton name="File" />
