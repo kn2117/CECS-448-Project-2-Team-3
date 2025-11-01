@@ -1,0 +1,7 @@
+.TabContainer{
+    display:flex;
+    flex-direction: row;
+    width:300px;
+    height: 25px;
+    margin-left: 10px;
+}

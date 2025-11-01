@@ -1,17 +1,25 @@
-.DocContainer {
+
+.ParentContainer{
     display:flex;
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /*Centers children vertically */
-    height: 1000px; /* Provides the container with a height to center within */
+    justify-content:center;
+    height: 1200px;
     background-color: #f9fbfd;
     overflow-y: auto;
+    
+}
 
+.Wrapper{
+    margin-top:50px;
+    width:60%;
+    height:80%;
+    min-width: 700px;
 }
 
 .DocBody{
-    width:60%;
-    height:90%;
+    height:95%;
     border: 2px solid #c8c8c8;
-    min-width: 700px;
+    background-color: white;
     overflow: hidden;
+    max-width:900px;
+    min-width: 700px;
 }
