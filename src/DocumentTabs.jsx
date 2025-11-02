@@ -10,7 +10,7 @@ const styles={
     button:{
         borderTop:'2px solid #c8c8c8', borderLeft:'2px solid #c8c8c8', 
         borderRight:'2px solid #c8c8c8', borderTopLeftRadius:5, borderTopRightRadius:5, 
-        borderBottomLeftRadius:0, borderBottomRightRadius:0, outline:'none', color:'black',
+        borderBottomLeftRadius:0, borderBottomRightRadius:0, outline:'none', color:'black', backgroundColor:'#e4e4e4ff'
     }
 };
 
@@ -32,9 +32,10 @@ export default function DocumentTabs({value, onClick}) {
                <Tab text="tab 1" id={1} value={value} onClick={onClick}/>
                <Tab text="tab 2" id={2} value={value} onClick={onClick}/>
                <Tab text="tab 3" id={4} value={value} onClick={onClick}/>
-               <Button style={{...styles.button}}>
+               <Button sx={{... styles.button, minWidth:25}}>
                 +
-               </Button>
+                </Button>
+                
             </div>
         
         </>
