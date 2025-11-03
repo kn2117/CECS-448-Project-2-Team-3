@@ -33,16 +33,15 @@ function App() {
       <div class="docBody">
         <DocBody/>
       </div>
+      <div class="mainDocWindow">
+         <MainDocWindow />
+       </div>
 
        {/* <div class="documentTabs">
          <DocumentTabs />
        </div>
        <div class="editingModes">
          <EditingModes />
-       </div>
-
-       <div class="mainDocWindow">
-         <MainDocWindow />
        </div> */}
      </>
 
