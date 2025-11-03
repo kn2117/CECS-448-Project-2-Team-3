@@ -1,5 +1,7 @@
 # CECS-448-Project-2-Team-3
 
+Live demo can be found here: https://kn2117.github.io/CECS-448-Project-2-Team-3/
+
 To run, use `npm run dev`
 
 Please run `npm install` before running `npm run dev`
