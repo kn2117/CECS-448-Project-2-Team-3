@@ -1,0 +1,29 @@
+.ribbon-container {
+    width: 100%;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ribbon-container .MuiToolbar-root {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ribbon-container .MuiIconButton-root:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.ribbon-container .MuiToggleButton-root {
+    border: 1px solid #dadce0;
+    color: #3c4043;
+}
+
+.ribbon-container .MuiToggleButton-root.Mui-selected {
+    background-color: #e8f0fe;
+    color: #1967d2;
+}
+
+.ribbon-container .MuiToggleButton-root.Mui-selected:hover {
+    background-color: #d2e3fc;
+}

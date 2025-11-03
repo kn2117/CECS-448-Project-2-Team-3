@@ -21,25 +21,31 @@ function App() {
     <>
       <div class="header">
         <Header />
+      </div>
+      <div class="ribbonMenu">
+        <RibbonMenu />
+      </div>
+      <div class="editingModes">
         <EditingModes
           currentMode = {mode}
-          handleModeChange = {handleModeChange}/>  
+          handleModeChange = {handleModeChange}/>
       </div>
       <div class="docBody">
         <DocBody/>
       </div>
+
        {/* <div class="documentTabs">
          <DocumentTabs />
        </div>
-
-       <div class="ribbonMenu">
-         <RibbonMenu />
+       <div class="editingModes">
+         <EditingModes />
        </div>
+
        <div class="mainDocWindow">
          <MainDocWindow />
        </div> */}
      </>
-  
+
   )
 }
 

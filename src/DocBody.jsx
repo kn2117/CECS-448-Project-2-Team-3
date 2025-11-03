@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './DocBody.css';
 import DocumentTabs from './DocumentTabs';
- export default function DocBody(){
+
+export default function DocBody(){
 
     const [activeTab, setActiveTab] = useState(1);
     return (
-        
+
         <div class='ParentContainer'>
 
             <div class='Wrapper'>

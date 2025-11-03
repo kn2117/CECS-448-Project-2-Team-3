@@ -11,8 +11,28 @@
 .header {
   position: fixed;
   background-color: white;
+  z-index: 1000;
+  top: 0;
+}
+
+.ribbonMenu {
+  position: fixed;
+  top: 70px;
+  background-color: white;
+  z-index: 999;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.editingModes {
+  position: fixed;
+  top: 118px;
+  background-color: white;
+  z-index: 998;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .docBody {
-  margin-top: 90px;
+  margin-top: 190px;
 }
