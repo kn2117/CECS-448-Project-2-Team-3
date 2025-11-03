@@ -25,11 +25,14 @@
 }
 
 .editingModes {
+  display:flex;
   position: fixed;
-  top: 118px;
+  top: 110px;
   background-color: white;
   z-index: 998;
   width: 100%;
+  height: 50px;
+  align-items: center;
   border-bottom: 1px solid #e0e0e0;
 }
 

@@ -6,6 +6,7 @@ export default function EditingModes({currentMode, handleModeChange}) {
         <Toolbar>
           Current Mode:
           <Button
+          size = "small"
           variant = {currentMode == "edit" ? "contained" : "outlined"}
           onClick = {() => handleModeChange("edit")}
           color = {currentMode == "edit" ? "success" : "primary"}
@@ -14,6 +15,7 @@ export default function EditingModes({currentMode, handleModeChange}) {
             Editing
           </Button>
           <Button
+          size = "small"
           variant = {currentMode == "suggest" ? "contained" : "outlined"}
           onClick = {() => handleModeChange("suggest")}
           color = {currentMode == "suggest" ? "success" : "primary"}
@@ -22,6 +24,7 @@ export default function EditingModes({currentMode, handleModeChange}) {
             Suggesting
           </Button>
           <Button
+          size = "small"
           variant = {currentMode == "view" ? "contained" : "outlined"}
           onClick = {() => handleModeChange("view")}
           color = {currentMode == "view" ? "success" : "primary"}
